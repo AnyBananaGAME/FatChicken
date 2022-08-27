@@ -1,6 +1,6 @@
 {
     "owner": "This command is an owner only",
-    "dev": "This command is a developer only!"
+    "dev": "This command is a developer only!",
 
-    
+    "rankcmdfooter": "You get XP for sending a message every one minute!"
 }

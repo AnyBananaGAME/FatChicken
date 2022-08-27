@@ -12,6 +12,7 @@
     "chalk": "^4.1.2",
     "discord.js": "^13.8.1",
     "fs": "^0.0.1-security",
+    "parse-ms": "2.1",
     "quick.db": "^7.1.3"
   }
 }
