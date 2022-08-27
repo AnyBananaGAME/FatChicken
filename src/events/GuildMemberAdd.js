@@ -8,6 +8,6 @@ module.exports = {
         const guild = client.guilds.cache.get("1012831452305575956");
         var role = guild.roles.cache.find(r => r.name === 'Member');
         member.roles.add(role);
-
+        
     }
 }
