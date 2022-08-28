@@ -15,13 +15,12 @@ module.exports = {
     if(message.author.id !== config.owner) return message.channel.send('')
     
 
-    const gid = message.guild.id;
     const id = message.author.id;
-    let xp = db.fetch(`xp.${gid}.${id}`);
+    let xp = db.fetch(`xp=${id}`);
     if(xp === null) xp = 0;
-    let level = db.fetch(`level.${gid}.${id}`);
+    let level = db.fetch(`level=${id}`);
     if(level === null) level = 0;
-    let xpreq = db.fetch(`xpreq.${gid}.${id}`);
+    let xpreq = db.fetch(`xpreq=${id}`);
     if(xpreq === null) xpreq = 50;
 
 
