@@ -10,11 +10,8 @@ module.exports = {
   aliases: ["balance"],
   description: "Check your balance",
   execute: async(message, client, args) => {
-    const id = message.author.id;
- 
 
-
-    const Mentioned = message.mentions.members.first;
+    const Mentioned = message.mentions.members.first();
     if(Mentioned){
         const id = Mentioned.id;
 
@@ -23,8 +20,9 @@ module.exports = {
         if(money === null){
             const NotStartedEmbed = new MessageEmbed()
             .setColor(config.color)
-            .setDescription(`Greetings! ${message.author}\n\nWe've noticed that you are new!\nPlease start using !start, to get a short tutorial about this!\nThank you! -FatOtter`)
+            .setDescription(`Oh noe! ${message.author}\n\nThat user does not have a profile :(`)
         message.channel.send({embeds: [NotStartedEmbed]})
+        return;
         }
 
         const MentionedBalanceEmbed = new MessageEmbed()
@@ -39,8 +37,9 @@ module.exports = {
         if(money === null){
             const NotStartedEmbed = new MessageEmbed()
             .setColor(config.color)
-            .setDescription(`Greetings! ${message.author}\n\nWe've noticed that you are new!\nPlease start using !start, to get a short tutorial about this!\nThank you! -FatOtter`)
+            .setDescription(`Greetings! ${message.author}\n\nWe've noticed that you are new!\nPlease start using ${config.prefix}start, to get a short tutorial about this!\nThank you! -FatOtter`)
         message.channel.send({embeds: [NotStartedEmbed]})
+        return;
         }
         const MentionedBalanceEmbed = new MessageEmbed()
         .setColor(config.color)
