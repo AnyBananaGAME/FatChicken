@@ -15,14 +15,17 @@ module.exports = {
 
     const id = message.author.id;
     let money = db.fetch(`money=${id}`);
-    if(money >= -1) return message.channel.send(nps.alreadystarted);
+    if(money !== null) return message.channel.send(nps.alreadystarted);
 
 
-    if (money === null) money = 100;
+    if (money === null) {
+        db.set(`money=${id}`, 100)
+
     const StartedEmbed =  new MessageEmbed()
-    .setDescription(`Congrats! ${message.author}\n\nYou have just started your profile!\n\n\nYou get 200*level money every time you levelup!\n`)
+    .setColor(config.color)
+    .setDescription(`Congrats! ${message.author}\n\nYou have just started your profile!\nYou get 200*level money every time you levelup!\n`)
     message.channel.send({embeds: [StartedEmbed]})
-        
+    }
 
 
 
