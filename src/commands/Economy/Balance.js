@@ -29,8 +29,8 @@ module.exports = {
         .setColor(config.color)
         .setDescription(`Balance of ${Mentioned.user}\n\nBalance: ${money}`)
         message.channel.send({embeds: [MentionedBalanceEmbed]})
-    }else {
-        const id = message.author.id;
+    } 
+      if(!Mentioned){  const id = message.author.id;
 
         let money = db.fetch(`money=${id}`);
 
@@ -44,7 +44,6 @@ module.exports = {
         const MentionedBalanceEmbed = new MessageEmbed()
         .setColor(config.color)
         .setDescription(`Balance of ${message.author}\n\nBalance: ${money}`)
-        message.channel.send({embeds: [MentionedBalanceEmbed]})
         message.channel.send({embeds: [MentionedBalanceEmbed]})
     
        }
