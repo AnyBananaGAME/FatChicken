@@ -15,7 +15,7 @@ module.exports = {
 
     const id = message.author.id;
     let money = db.fetch(`money=${id}`);
-    if(money > -1) return message.channel.send(nps.alreadystarted);
+    if(money >= -1) return message.channel.send(nps.alreadystarted);
 
 
     if (money === null) money = 100;
