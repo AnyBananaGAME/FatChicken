@@ -9,6 +9,8 @@ module.exports = {
       const id = message.author.id;
        
 
+      let money = db.fetch(`money=${id}`);
+      if(money = null)return message.channel.you('We were not able to give you your level up reward cause you have not started in economy... :(')
       let xp = db.fetch(`xp=${id}`);
       if(xp === null) xp = 0;
         let level = db.fetch(`level=${id}`);
@@ -22,6 +24,12 @@ module.exports = {
         db.set(`level=${id}`,Number(level + 1))
           db.set(`xp=${id}`, 0)
              db.set(`xpreq=${id}`, Number(newe))
+             if(money >= -1){
+              let lava = db.fetch(`level=${id}`);
+              const moneh = Math.floor(200 * lava)
+              console.log(moneh)
+              db.add(`money=${id}`, Number(moneh))
+            }
         
         const LevelUPEmbed = new MessageEmbed()
         .setColor(config.color)
