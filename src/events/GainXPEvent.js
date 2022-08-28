@@ -37,7 +37,7 @@ module.exports = {
           }
 
     } else {
-            const RandomXp = Math.floor(Math.random() * 220) + 1;
+            const RandomXp = Math.floor(Math.random() * 20) + 1;
             if(config.debug === "true"){
                 const channel = client.channels.cache.get("1008397863518228480")
                 const Embed = new MessageEmbed()
