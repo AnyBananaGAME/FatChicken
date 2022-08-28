@@ -7,21 +7,21 @@ module.exports = {
     async execute(message, client) {
 
       const id = message.author.id;
-      const gid = message.guild.id;
+       
 
-      let xp = db.fetch(`xp.${gid}.${id}`);
+      let xp = db.fetch(`xp=${id}`);
       if(xp === null) xp = 0;
-        let level = db.fetch(`level.${gid}.${id}`);
+        let level = db.fetch(`level=${id}`);
         if(level === null) level = 1;
-          let xpreq = db.fetch(`xpreq.${gid}.${id}`);
+          let xpreq = db.fetch(`xpreq=${id}`);
           if(xpreq === null) xpreq = 50;
 
 
           const newe = Math.floor(Number(xpreq*1.2))
           if(xp >= xpreq){
-        db.set(`level.${gid}.${id}`,Number(level + 1))
-          db.set(`xp.${gid}.${id}`, 0)
-             db.set(`xpreq.${gid}.${id}`, Number(newe))
+        db.set(`level=${id}`,Number(level + 1))
+          db.set(`xp=${id}`, 0)
+             db.set(`xpreq=${id}`, Number(newe))
         
         const LevelUPEmbed = new MessageEmbed()
         .setColor(config.color)
