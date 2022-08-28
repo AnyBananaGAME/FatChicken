@@ -30,8 +30,8 @@ module.exports = {
         .setDescription(`Balance of ${Mentioned.user}\n\nBalance: ${money}`)
         message.channel.send({embeds: [MentionedBalanceEmbed]})
     } 
-      if(!Mentioned){  const id = message.author.id;
-
+      if(!Mentioned){ 
+         const id = message.author.id;
         let money = db.fetch(`money=${id}`);
 
         if(money === null){
