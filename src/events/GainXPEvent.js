@@ -9,16 +9,15 @@ module.exports = {
     async execute(message, client) {
 
     const id = message.author.id;
-    const gid = message.guild.id;
   
   
-    let xp = db.fetch(`xp.${gid}.${id}`);
+    let xp = db.fetch(`xp=${id}`);
     if(xp === null) xp = 0;
-    let level = db.fetch(`level.${gid}.${id}`);
+    let level = db.fetch(`level=${id}`);
     if(level === null) level = 0;
-    let xpreq = db.fetch(`xpreq.${gid}.${id}`);
+    let xpreq = db.fetch(`xpreq=${id}`);
     if(xpreq === null) xpreq = 50;
-    let xpcd = db.fetch(`xpcd.${gid}.${id}`);
+    let xpcd = db.fetch(`xpcd=${id}`);
     if(xpcd === null) xpcd = 0;
     if(message.author.bot) return;
 
@@ -46,12 +45,12 @@ module.exports = {
                 .setDescription(`DEBUG: \n ${message.author.tag} received ${RandomXp} xp `)
                 .setFooter(`${message.author.tag}  "ID: ${message.author.id}`)
                 channel.send({embeds: [Embed]});
-                db.set(`xp.${gid}.${id}`, Number(xp + RandomXp))
-                db.set(`xpcd.${gid}.${id}`, Date.now())
+                db.set(`xp=${id}`, Number(xp + RandomXp))
+                db.set(`xpcd=${id}`, Date.now())
 
             } else {
-            db.set(`xp.${gid}.${id}`, Number(xp + RandomXp))
-            db.set(`xpcd.${gid}.${id}`, Date.now())
+            db.set(`xp=${id}`, Number(xp + RandomXp))
+            db.set(`xpcd=${id}`, Date.now())
             }
         }
     
