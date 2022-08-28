@@ -14,7 +14,7 @@ module.exports = {
     let xp = db.fetch(`xp=${id}`);
     if(xp === null) xp = 0;
     let level = db.fetch(`level=${id}`);
-    if(level === null) level = 0;
+    if(level === null) level = 1;
     let xpreq = db.fetch(`xpreq=${id}`);
     if(xpreq === null) xpreq = 50;
     let xpcd = db.fetch(`xpcd=${id}`);
