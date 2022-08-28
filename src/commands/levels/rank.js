@@ -10,9 +10,6 @@ module.exports = {
   aliases: ["level"],
   description: "Check your level and XP",
   execute: async(message, client, args) => {
- 
- 
-    if(message.author.id !== config.owner) return message.channel.send('')
     
 
     const id = message.author.id;
