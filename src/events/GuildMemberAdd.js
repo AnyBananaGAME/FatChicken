@@ -1,4 +1,5 @@
 const config = require('../../resources/configs/config.json')
+const db = require('quick.db')
 module.exports = {
     name: 'guildMemberAdd',
     async execute(member, client) {
