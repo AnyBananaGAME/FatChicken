@@ -3,5 +3,13 @@
     "dev": "This command is a developer only!",
 
     "rankcmdfooter": "You get XP for sending a message every one minute!",
-    "alreadystarted": "Oh you silly, you've already started haha!"
+    "alreadystarted": "Oh you silly, you've already started haha!",
+
+    "notenoughcfmoney": "You can not CoinFlip more money than you have!",
+    "notavalidnumber": "The amount you provided is invalid",
+    "NaNcf": "Amount must be a number",
+    "cfcd": "CoinFlip is on cooldown for another"
+
+
+    
 }
