@@ -3,7 +3,7 @@ const config = require('../../../resources/configs/config.json')
 
 const db = require('quick.db')
 module.exports = {
-    name: "lb",
+    name: "levellb",
     description: "Leaderboard for levels",
     execute: async (message, client, args) => {
 
