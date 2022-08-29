@@ -7,6 +7,7 @@ const ms = require("parse-ms")
 module.exports = {
     name: 'messageCreate',
     async execute(message, client) {
+        if(message.author.bot) return;
 
     const id = message.author.id;
   
@@ -14,7 +15,9 @@ module.exports = {
     let xp = db.fetch(`xp=${id}`);
     if(xp === null) xp = 0;
     let level = db.fetch(`level=${id}`);
-    if(level === null) level = 1;
+    if(level === null){
+        db.set(`level=${id}`, 1)
+    }
     let xpreq = db.fetch(`xpreq=${id}`);
     if(xpreq === null) xpreq = 50;
     let xpcd = db.fetch(`xpcd=${id}`);
