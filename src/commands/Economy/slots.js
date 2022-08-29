@@ -37,7 +37,7 @@ module.exports = {
     if(moneh <= 0) return message.channel.send(nps.notavalidnumber);
     if(isNaN(moneh)) return message.channel.send(nps.NaNcf);
 
-    if (slots[result1] === slots[result2] && slots[result3]) {
+    if (slots[result1] === slots[result2] && slots[result1] === slots[result3]) {
         let S3 = new MessageEmbed()
        .setTitle('You won x3 your amount!')
        .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
