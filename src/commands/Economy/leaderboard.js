@@ -17,7 +17,6 @@ module.exports = {
       .setAuthor(`Money Leaderboard!`, message.guild.iconURL())
       .setColor(config.color)
       .setDescription(`${finalLb}`)
-      .setFooter(client.user.tag, client.user.displayAvatarURL())
       .setTimestamp()
       message.channel.send({embeds: [embed]});
 
