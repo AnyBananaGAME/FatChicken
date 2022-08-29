@@ -26,7 +26,7 @@ module.exports = {
     }
  
 
-    let slots = ["😶", "😇", "😜", ":sunglasses:"];
+    let slots = ["😶", "😇", "😜"];
     let result1 = Math.floor((Math.random() * slots.length));
     let result2 = Math.floor((Math.random() * slots.length));
     let result3 = Math.floor((Math.random() * slots.length));
