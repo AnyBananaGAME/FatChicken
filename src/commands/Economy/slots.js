@@ -50,7 +50,7 @@ module.exports = {
         let S0 = new MessageEmbed()
         .setTitle('You lost')
         .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
-        .setColor(config.color)
+        .setColor('RED')
      message.channel.send({embeds: [S0]})
      db.set(`slotscd=${id}`, Date.now())
      db.subtract(`money=${id}`, Number(moneh))
