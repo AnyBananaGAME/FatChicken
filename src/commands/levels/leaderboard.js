@@ -17,7 +17,6 @@ module.exports = {
       .setAuthor(`Levels Leaderboard!`, message.guild.iconURL())
       .setColor("#7289da")
       .setDescription(`${finalLb}`)
-      .setFooter(client.user.tag, client.user.displayAvatarURL())
       .setTimestamp()
       message.channel.send({embeds: [embed]});
 
