@@ -30,6 +30,7 @@ module.exports = {
     const Mentioned = message.mentions.members.first()
     if(!Mentioned) return message.channel.send(nps.pleasemention)
     const amount = args[1]
+    if(!amount) return message.channel.send(nps.notavalidnumber)
 
     if(amount > money) return message.channel.send(nps.notenoughmoney);
     if(amount <= 0) return message.channel.send(nps.notavalidnumber);
