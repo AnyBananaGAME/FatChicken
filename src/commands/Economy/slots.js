@@ -43,13 +43,17 @@ module.exports = {
        .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
        .setColor(config.color)
     message.channel.send({embeds: [S3]});
-
+    db.set(`slotscd=${id}`, Date.now())
+    const newMonei = Math.floor(moneh * 3)
+    db.add(`money=${id}`, Number(newMonei))
     }else {
         let S0 = new MessageEmbed()
         .setTitle('You lost')
         .addField('Result:', slots[result1] + slots[result2] + slots[result3], true)
         .setColor(config.color)
      message.channel.send({embeds: [S0]})
+     db.set(`slotscd=${id}`, Date.now())
+     db.subtract(`money=${id}`, Number(moneh))
     }
 
 
