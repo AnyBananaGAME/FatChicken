@@ -10,13 +10,16 @@ module.exports = {
   aliases: ["level"],
   description: "Check your level and XP",
   execute: async(message, client, args) => {
-    
+    if(message.author.bot) return;
+
 
     const id = message.author.id;
     let xp = db.fetch(`xp=${id}`);
     if(xp === null) xp = 0;
     let level = db.fetch(`level=${id}`);
-    if(level === null) level = 1;
+    if(level === null){
+        db.set(`level=${id}`, 1)
+    }
     let xpreq = db.fetch(`xpreq=${id}`);
     if(xpreq === null) xpreq = 50;
 
