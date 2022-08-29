@@ -4,6 +4,7 @@
 
     "rankcmdfooter": "You get XP for sending a message every one minute!",
     "alreadystarted": "Oh you silly, you've already started haha!",
+    "notenoughmoney": "You do not have enough money",
 
     "notenoughcfmoney": "You can not CoinFlip more money than you have!",
     "notavalidnumber": "The amount you provided is invalid",
@@ -11,5 +12,5 @@
     "cfcd": "CoinFlip is on cooldown for another"
 
 
-    
+
 }
