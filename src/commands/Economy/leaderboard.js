@@ -16,7 +16,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed()
       .setAuthor(`Money Leaderboard!`, message.guild.iconURL())
       .setColor(config.color)
-      .setDescription(`${finalLb}`)
+      .setDescription(`\n${finalLb}`)
       .setTimestamp()
       message.channel.send({embeds: [embed]});
 
