@@ -17,7 +17,7 @@ module.exports = {
     if(cfcd === null){
         db.set(`cfcd=${id}`, 0)
     }
-    let timeout = 1000 * 60 * 10;
+    let timeout = 1000 * 60 * 1;
     if(money === null){
         const NotStartedEmbed = new MessageEmbed()
         .setColor(config.color)
