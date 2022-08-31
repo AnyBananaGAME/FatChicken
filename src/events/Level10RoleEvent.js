@@ -9,8 +9,6 @@ module.exports = {
 
       const id = message.author.id;
        
-
-      if(xp === null) xp = 0;
       let level = db.fetch(`level=${id}`);
 
 
