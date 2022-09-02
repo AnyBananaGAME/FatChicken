@@ -15,8 +15,10 @@ const {Client, Collection, Intents} = require('discord.js');
   const handlers = fs.readdirSync("../src/handlers")  .filter(file => file.endsWith('.js'));
   const eventFiles = fs.readdirSync("../src/events").filter(file => file.endsWith('.js'));
   const commandFolders = fs.readdirSync("../src/commands")
+  const slashcommandFolders = fs.readdirSync("../src/slashcommands")
+  
   client.commands = new Collection();
-
+  client.slashcommands = new Collection();
 
 
   (async () => {
@@ -26,5 +28,7 @@ const {Client, Collection, Intents} = require('discord.js');
   
     client.eventhandler(eventFiles, './src/events')
     client.commandhandler(commandFolders, `./src/commands`)
+    client.slashcommandhandler(slashcommandFolders, `./src/slashcommands`)
+
     client.login(config.token)})();
 
