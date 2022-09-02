@@ -16,7 +16,7 @@ module.exports = {
         try {
             await slashcommand.execute(interaction, client);
         } catch (error) {
-            console.log(chalk.red(`!!!`) + chalk.gray(` ${error}`))
+            console.log(chalk.gray('[') + chalk.red('-') + chalk.gray(']') +  chalk.white(` ${console.error(error)}`))
             await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
         
     }
