@@ -13,10 +13,7 @@ module.exports = {
             }  
           
           }
-          if(message.channel.id === "1013777232990310461"){
-            message.react("👍")
-            message.react("👎")
-          }
+          
         
     }
 }
