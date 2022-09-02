@@ -18,21 +18,22 @@ module.exports = {
         await msg.delete()
     
     } else {
+        message.react('<a:yes:1015214260613296138>')
         if(!args[0]){
             message.reply('(.suggest suggestion)')
             return;
         }
         const suggestion = message.content.slice(8).trim();
         let SuggestionEmbed = new MessageEmbed()
-        .setColor(config.colour)
+        .setColor(config.color)
         .addField('Suggested by', `${message.author.tag}`)
         .addField('Suggestion',`${suggestion}`) 
         .setTimestamp()
-        .setFooter(message.author.username, message.author.displayAvatarURL())
+        .setFooter(message.author.tag, message.author.displayAvatarURL())
         
     client.channels.cache.get('1013777232990310461').send({ embeds: [SuggestionEmbed]}).then((mesg) => {
-        mesg.react('👍')
-        mesg.react('👎')
+        mesg.react('<a:yes:1015214260613296138>')
+        mesg.react('<a:no:1015214299691634758>')
     })
 
 
