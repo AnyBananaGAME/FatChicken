@@ -11,6 +11,7 @@
   "dependencies": {
     "@discordjs/builders": "^1.2.0",
     "@discordjs/rest": "^1.1.0",
+    "ascii-table": "^0.0.9",
     "chalk": "^4.1.2",
     "discord.js": "^13.8.1",
     "fs": "^0.0.1-security",
