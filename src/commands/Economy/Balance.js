@@ -10,7 +10,7 @@ module.exports = {
   aliases: ["balance"],
   description: "Check your balance",
   execute: async(message, client, args) => {
-
+    try{
     const Mentioned = message.mentions.members.first();
     if(Mentioned){
         const id = Mentioned.id;
@@ -56,8 +56,15 @@ module.exports = {
 
 
 
+    }catch(error){
+        const channel = client.channels.cache.get('1015523931274354770')
+        const ErrorEmbed = new MessageEmbed()
+            .setColor(config.color)
+            .setDescription(`------------Date------------\n **${Date()}**\n\n------------Error------------\n **${error}**\n\n------------Caused by------------\n**${message.author.tag} ( ${message.author.id} **)`)
+        await channel.send({embeds: [ErrorEmbed]})
 
 
+    }
 
 
     }
