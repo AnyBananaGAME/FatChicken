@@ -6,7 +6,7 @@ module.exports = {
   aliases: ["up"],
   description: "Check the server's information",
   execute: async(message, client, args) => {
- 
+    try{
 
     let totalSeconds = (client.uptime / 1000);
     let days = Math.floor(totalSeconds / 86400);
@@ -22,6 +22,14 @@ module.exports = {
     .setDescription(`Uptime\n\nSeconds: ${seconds}\nMinutes: ${minutes}\nHours: ${hours}\nDays: ${days}`)
     message.channel.send({embeds: [RESR]})
 
+
+    }catch(error){
+      const channel = client.channels.cache.get('1015523931274354770')
+      const ErrorEmbed = new MessageEmbed()
+          .setColor(config.color)
+          .setDescription(`------------Date------------\n **${Date()}**\n\n------------Error------------\n **${error}**\n\n------------Caused by------------\n**${message.author.tag} ( ${message.author.id} **)`)
+      await channel.send({embeds: [ErrorEmbed]})
+    }
 
     }
 }
