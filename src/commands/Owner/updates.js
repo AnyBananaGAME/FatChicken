@@ -13,6 +13,7 @@ module.exports = {
     execute: async (message, client, args) => {
 
         try {
+            if(message.author.id !== config.owner) return;
             if(message.author.bot) return;
 
               const Output = await exec('npx npm-check-updates')
