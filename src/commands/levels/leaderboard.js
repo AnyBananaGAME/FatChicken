@@ -4,6 +4,7 @@ const config = require('../../../resources/configs/config.json')
 const db = require('quick.db')
 module.exports = {
     name: "levellb",
+    aliases: ["llb"],
     description: "Leaderboard for levels",
     execute: async (message, client, args) => {
       try {
