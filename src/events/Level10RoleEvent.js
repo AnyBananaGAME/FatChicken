@@ -16,6 +16,7 @@ module.exports = {
 
 
     if(level >= "10"){
+        const guild  = message.channel.guild;
         var role = guild.roles.cache.find(r => r.name === 'Bamboo');
         message.authorroles.add(role);
         message.channel.send(`Congrats ${message.author}, you just received a ROLE! for reaching level 10`)
