@@ -3,6 +3,7 @@ const Fs = require("fs");
 const config = require('../../../resources/configs/config.json')
 module.exports = {
   name: "suggest",
+  aliases: ["suggest"],
   description: "Suggest a fewture for the bot, or a change for discord guild",
   execute: async(message, client, args) => {
     try{
