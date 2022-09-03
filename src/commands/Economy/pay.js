@@ -12,6 +12,7 @@ module.exports = {
   aliases: ["pays"],
   description: "Create an account",
   execute: async(message, client, args) => {
+    try{
     const id = message.author.id;
     let money = db.fetch(`money=${id}`);
     
@@ -49,7 +50,15 @@ module.exports = {
 
 
 
+  }catch(error){
+    const channel = client.channels.cache.get('1015523931274354770')
+    const ErrorEmbed = new MessageEmbed()
+        .setColor(config.color)
+        .setDescription(`------------Date------------\n **${Date()}**\n\n------------Error------------\n **${error}**\n\n------------Caused by------------\n**${message.author.tag} ( ${message.author.id} **)`)
+    await channel.send({embeds: [ErrorEmbed]})
 
+
+  }
 
     }
 }
