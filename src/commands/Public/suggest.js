@@ -5,6 +5,7 @@ module.exports = {
   name: "suggest",
   description: "Suggest a fewture for the bot, or a change for discord guild",
   execute: async(message, client, args) => {
+    try{
  
 
     if(message.channel.id !== "1014482651014512691"){
@@ -39,6 +40,20 @@ module.exports = {
 
 
     }
+
+
+
+        }catch(error){
+            const channel = client.channels.cache.get('1015523931274354770')
+            const ErrorEmbed = new MessageEmbed()
+                .setColor(config.color)
+                .setDescription(`------------Date------------\n **${Date()}**\n\n------------Error------------\n **${error}**\n\n------------Caused by------------\n**${message.author.tag} ( ${message.author.id} **)`)
+            await channel.send({embeds: [ErrorEmbed]})
+    
+    
+        }
+
+
 
     }
 }
