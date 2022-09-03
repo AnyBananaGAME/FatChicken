@@ -6,7 +6,7 @@ module.exports = {
   aliases: ["si"],
   description: "Check the server's information",
   execute: async(message, client, args) => {
- 
+        try{
     
         const guild = message.channel.guild;
         const guildName = guild.name;
@@ -25,7 +25,14 @@ module.exports = {
 
 
 
-
+        }catch(error){
+            const channel = client.channels.cache.get('1015523931274354770')
+            const ErrorEmbed = new MessageEmbed()
+                .setColor(config.color)
+                .setDescription(`------------Date------------\n **${Date()}**\n\n------------Error------------\n **${error}**\n\n------------Caused by------------\n**${message.author.tag} ( ${message.author.id} **)`)
+            await channel.send({embeds: [ErrorEmbed]})
+    
+        }
 
 
 
