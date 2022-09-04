@@ -8,6 +8,7 @@ module.exports = {
         .setDescription('Check the uptime'),
     async execute(interaction, client) {
     
+        
 
         let totalSeconds = (client.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);
