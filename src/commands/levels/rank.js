@@ -12,7 +12,7 @@ module.exports = {
   execute: async(message, client, args) => {
     try{
     if(message.author.bot) return;
-    low
+    
 
     const id = message.author.id;
     let xp = db.fetch(`xp=${id}`);
