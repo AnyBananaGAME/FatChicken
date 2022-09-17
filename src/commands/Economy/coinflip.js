@@ -39,7 +39,7 @@ module.exports = {
         let time = ms(timeout - (Date.now() - cfcd))
         const cfcdc = new MessageEmbed()
         .setColor(config.color)
-        .setDescription(`${nps.cfcd}${time.minutes} minutes and ${time.seconds} seconds`)
+        .setDescription(`${nps.cfcd} ${time.minutes} minutes and ${time.seconds} seconds`)
         message.channel.send({embeds: [cfcdc]})
         return;
       } else {
@@ -49,7 +49,7 @@ module.exports = {
             db.add(`money=${id}`, Number(cfmoney) )
             db.set(`cfcd=${id}`, Date.now())
             const winembed = new MessageEmbed()
-            .setDescription(`Woah! ${message.author}!\n\nYou've just won ${cfmoney}`)
+            .setDescription(`Woah! ${message.author}!\n\n You've just won ${cfmoney}`)
             .setColor(config.color)
             message.channel.send({embeds: [winembed]})
             return;
