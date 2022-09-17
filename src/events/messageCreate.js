@@ -13,6 +13,9 @@ module.exports = {
             }  
           
           }
+        if(message.content.includes('<@1012832791618130011>')){
+          message.channel.send('My prefix is `.`')
+        }
           
         
     }
