@@ -21,8 +21,8 @@ module.exports = {
         let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
         const RESR = new MessageEmbed()
         .setColor(config.color)
-        .setDescription(`Uptime\n\nSeconds: ${seconds}\nMinutes: ${minutes}\nHours: ${hours}\nDays: ${days}`)
-        interaction.channel.send({embeds: [RESR]})
+        .setDescription(`Uptime of ${client.user.tag}\n\n[Seconds: ${seconds}]\n[Minutes: ${minutes}]\n[Hours: ${hours}]\n[Days: ${days}]`)
+        interaction.reply({embeds: [RESR]})
     
 
 
