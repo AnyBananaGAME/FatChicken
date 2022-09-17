@@ -17,11 +17,20 @@ module.exports = {
 
     const id = message.author.id;
     let money = db.fetch(`money=${id}`);
+    let potatos = db.fetch(`potato=${id}`);
+    let carrots = db.fetch(`carrot=${id}`);
+    let beetroot = db.fetch(`beetroot=${id}`);
+    let apples = db.fetch(`apple=${id}`);
+
     if(money !== null) return message.channel.send(nps.alreadystarted);
 
 
     if (money === null) {
         db.set(`money=${id}`, 100)
+        db.set(`potato=${id}`, 0)
+        db.set(`carrot=${id}`, 0)
+        db.set(`beetroot=${id}`, 0)
+        db.set(`apple=${id}`, 0)
 
     const StartedEmbed =  new MessageEmbed()
     .setColor(config.color)
