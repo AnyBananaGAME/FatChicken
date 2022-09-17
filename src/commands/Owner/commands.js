@@ -22,7 +22,7 @@ module.exports = {
       for (const file of commandFiles) {
           const command = require(`../../commands/${folder}/${file}`)
           table
-        .addRow("**Category:** " + folder + ";",'**Name:** ' + command.name + ";", "**Aliases:** "+command.aliases+ ";","**Description:** "+command.description + "\n")
+        .addRow("[(**Category:** " + folder + ")-",'(**Name:** ' + command.name + ")-", "(**Aliases:** "+command.aliases+ ")-","(**Description:** "+command.description + "\n)]")
 
           
           }
