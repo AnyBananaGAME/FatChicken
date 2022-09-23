@@ -10,7 +10,8 @@
     "notenoughcfmoney": "You can not CoinFlip more money than you have!",
     "notavalidnumber": "The amount you provided is invalid",
     "NaNcf": "Amount must be a number",
-    "cfcd": "CoinFlip is on cooldown for another"
+    "cfcd": "CoinFlip is on cooldown for another",
+    "cantcf": "Can not coinflip more than `1000` at once"
 
 
 

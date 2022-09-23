@@ -30,7 +30,9 @@ module.exports = {
 
 
     const cfmoney = args[0]
-    if(cfmoney > 1000) return message.channel.send('Can not coinflip more than `1000` at once ')
+    if(cfmoney > 1000) return message.channel.send(nps.cantcf)
+
+
     if(cfmoney > money) return message.channel.send(nps.notenoughcfmoney);
     if(cfmoney <= 0) return message.channel.send(nps.notavalidnumber);
     if(isNaN(cfmoney)) return message.channel.send(nps.NaNcf);
