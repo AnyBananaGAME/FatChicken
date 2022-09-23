@@ -11,7 +11,9 @@
   "dependencies": {
     "@discordjs/builders": "^1.2.0",
     "@discordjs/rest": "^1.1.0",
+    "@napi-rs/canvas": "^0.1.29",
     "ascii-table": "^0.0.9",
+    "canvas": "^2.10.1",
     "chalk": "^4.1.2",
     "discord.js": "^13.8.1",
     "fs": "^0.0.1-security",
