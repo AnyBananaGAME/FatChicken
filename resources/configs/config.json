@@ -1,5 +1,4 @@
 {
-    "token": "leaking bots token is fun",
     "owner": "599675959888707594",
 
     "prefix": ".",
@@ -16,7 +15,16 @@
     
     "guildId":[
       "1012831452305575956"
-    ]
+    ],
+
+
+
+
+
+    "potatocost": 100,
+    "carrotcost": 250,
+    "beetrootcost": 550,
+    "applecost": 1200
 
 
 
