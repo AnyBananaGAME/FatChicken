@@ -6,12 +6,22 @@ const ms = require("parse-ms")
 const db = require('quick.db');
 const { MessageEmbed } = require("discord.js");
 const Discord = require('discord.js')
+
+
+const status = false;
 module.exports = {
   name: "slots",
   aliases: ["sls"],
   description: "Coinflip money",
   execute: async(message, client, args) => {
     try{
+        if(status === false){
+            const DisabledEmbed = new MessageEmbed()
+            .setColor(config.color)
+            .setDescription('Sorry' + `${message.author}\nIt seems this command was disabled by a Developer\nIf you think this is an issue please contact a DEV`)
+            message.channel.send({embeds: [DisabledEmbed]})
+            return;
+        }
     const id = message.author.id;
     let money = db.fetch(`money=${id}`);
     if(money === null){
